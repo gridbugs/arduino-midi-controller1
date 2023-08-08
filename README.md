@@ -1,8 +1,13 @@
 ## Setup
 
-Install `USB-MIDI` Arduino library:
+Install toolchain:
 ```
-$ arduino-cli lib install USB-MIDI
+$ arduino-cli core install arduino:avr
+```
+
+Install `MIDI Library` Arduino library:
+```
+$ arduino-cli lib install 'MIDI Library'
 ```
 
 Add your unix user to the `dialout` group for non-root access to the serial
