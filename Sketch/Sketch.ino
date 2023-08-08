@@ -33,6 +33,7 @@ void setup() {
     pinMode(SYNC_PIN, INPUT_PULLUP);
     for (int i = 0; i < NUM_ANALOG_PINS; i++) {
         analog_state_curr[i] = analogRead(analog_pins[i]);
+        midi_state_curr[i] = map(analog_state_curr[i], 0, 1023, 0, 127);
         midi_state_prev[i] = midi_state_curr[i];
         midi_control_change(BASE_CONTROLLER + i, midi_state_curr[i], MIDI_CHANNEL);
     }
